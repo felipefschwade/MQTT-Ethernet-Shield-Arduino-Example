@@ -31,7 +31,7 @@ char message_buff[100];
 volatile unsigned long ul_PreviousMillis = 0;
 
 // MQTT server settings
-IPAddress mqttServer(192, 168, 1, 1);
+IPAddress mqttServer(Your server IP);
 int mqttPort = 1883;
 
 EthernetClient ethClient;
@@ -44,7 +44,7 @@ void reconnect() {
 #if DEBUG
     Serial.print("Attempting MQTT connection...");
 #endif
-    if (client.connect(deviceId, "ID", "Passwordr") && client.subscribe("home-assistant/sensor01")) {
+    if (client.connect(deviceId, "ID", "Password") && client.subscribe("home-assistant/sensor01")) {
 #if DEBUG
       Serial.println("connected");
 #endif
